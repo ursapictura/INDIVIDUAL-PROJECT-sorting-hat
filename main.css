@@ -1,3 +1,23 @@
-body {
-  background-color:blue;
+/* body {
+  background-image: url("night\ sky.jpeg");
+} */
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 50px 20px;
+  background-color: rgba(21, 25, 152, 0.533);
+  color: whitesmoke;
+}
+
+#students-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.card {
+  margin: 20px;
+  width: 250px;
 }
