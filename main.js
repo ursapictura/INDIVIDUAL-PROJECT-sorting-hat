@@ -4,7 +4,7 @@ const students = [
   {
     id: 1,
     name: "Harry Potter",
-    house: "Gryffindor",
+    house: "GRYFFINDOR",
     pronouns: "he/him",
 
   },
@@ -12,126 +12,126 @@ const students = [
   {
     Id: 2,
     name: "Luna Lovegood",
-    house: "Ravenclaw",
+    house: "RAVENCLAW",
     pronouns: "she/her",
   },
 
   {
     id: 3,
     name: "Hermione Granger",
-    house: "Gryffindor",
+    house: "GRYFFINDOR",
     pronouns: "she/her",
   },
 
   {
     id: 4,
     name: "Ron Weasley",
-    house: "Gryffindor",
+    house: "GRYFFINDOR",
     pronouns: "he/him",
   },
 
   {
     id: 5,
     name: "Cho Chang",
-    house: "Ravenclaw",
+    house: "RAVENCLAW",
     pronouns: "she/her",
   },
 
   {
     id: 6, 
     name: "Draco Malfoy",
-    house: "Slytherin",
+    house: "SLYTHERIN",
     pronouns: "he/him"
   },
 
   {
     id: 7,
     name: "Hannah Abbot",
-    house: "Hufflepuff",
+    house: "HUFFLEPUFF",
     pronouns: "she/they",
   },
 
   {
     id: 8,
     name: "Haley Smith",
-    house: "Hufflepuff",
+    house: "HUFFLEPUFF",
     pronouns: "she/they",
   },
 
   {
     id: 9, 
     name: "Rachel Spite",
-    house: "Ravenclaw",
+    house: "RAVENCLAW",
     pronouns: "she/her",
   },
 
   {
     id: 9,
     name: "Shane Smith",
-    house: "Slytherine",
+    house: "SLYTHERIN",
     pronouns: "he/him"
   },
 
   {
     id: 10,
     name: "Nik Stroupe",
-    house: "Hufflepuff",
+    house: "HUFFLEPUFF",
     pronouns: "he/him"
   },
 
   {
     id: 11,
     name: "Heathcliff",
-    house: "Gryffindor",
+    house: "GRYFFINDOR",
     pronouns: "he/him/good-boi",
   },
 
   {
     id: 12,
     name: "Kennedy",
-    house: "Slytherine",
+    house: "SLYTHERIN",
     pronouns: "she/her/queen",
   },
 
   {
     id: 13,
     name: "Amelia Pond",
-    house: "Gryffindor",
+    house: "GRYFFINDOR",
     pronouns: "she/her",
   },
 
   {
     id: 14,
     name: "Rory Williams",
-    house: "Hufflepuff",
+    house: "HUFFLEPUFF",
     pronouns: "he/him",
   },
 
   {
     id: 15, 
     name: "River Song",
-    house: "Slytherine",
+    house: "SLYTHERIN",
     pronouns: "she/her",
   },
 
   {
     id: 16, 
     name: "Donna Noble",
-    house: "Gryffindor",
+    house: "GRYFFINDOR",
     pronouns: "she/her",
   },
 
   {
     id: 16, 
     name: "Rose Noble",
-    house: "Gryffindor",
+    house: "GRYFFINDOR",
     pronouns: "she/her",
   },
 
   {
     id: 18,
     name: "Jack Harkness",
-    house: "Gryffindor",
+    house: "GRYFFINDOR",
     pronouns: "he/him",
   },
 ]
@@ -156,7 +156,7 @@ const cardsOnDom = (array) => {
           <div class="card-header text-bg-primary">${student.house}</div>
           <div class="card-body">
             <h5 class="card-title">${student.name}</h5>
-            <p class="card-text">pronouns: ${student.pronouns}</p>
+            <p class="card-text">${student.pronouns}</p>
           </div>
         </div>
       `
@@ -182,3 +182,24 @@ startApp();
 // ************************
 // FILTER STUDENTS BY HOUSE
 // ************************
+ 
+const houseFilter = document.querySelector('.house-btn-container')
+
+houseFilter.addEventListener("click", (e) => {
+
+  if (e.target.id.includes('gryffindor')) {
+    const gryffindorStudents = students.filter(student => student.house.toLowerCase() === "gryffindor");
+    cardsOnDom(gryffindorStudents);
+  } else if (e.target.id.includes('hufflepuff')) {
+    const hufflepuffStudents = students.filter(student => student.house.toLowerCase() === "hufflepuff");
+    cardsOnDom(hufflepuffStudents);
+  } else if (e.target.id.includes('ravenclaw')) {
+    const ravenclawStudents = students.filter(student => student.house.toLowerCase() === "ravenclaw");
+    cardsOnDom(ravenclawStudents);
+  } else if (e.target.id.includes('slytherin')) {
+    const slytherinStudents = students.filter(student => student.house.toLowerCase() === "slytherin");
+    cardsOnDom(slytherinStudents);
+  } else {
+    cardsOnDom(students);
+  }
+});
