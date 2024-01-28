@@ -32,7 +32,7 @@ const students = [
 
   {
     id: 5,
-    name: "Cho Chang",
+    name: "Rowena Ravenclaw",
     house: "RAVENCLAW",
     pronouns: "she/her",
   },
@@ -134,6 +134,34 @@ const students = [
     house: "GRYFFINDOR",
     pronouns: "he/him",
   },
+
+  {
+    id: 19,
+    name: "Cedric Diggory",
+    house: "HUFFLEPUFF",
+    pronouns: "he/him",
+  },
+
+  {
+    id: 20,
+    name: "Nymphodora Tonks",
+    house: "HUFFLEPUFF",
+    pronouns: "they/them",
+  },
+
+  {
+    id: 21,
+    name: "The Doctor",
+    house: "HUFFLEPUFF",
+    pronouns: "they/them",
+  },
+
+  {
+    id: 22,
+    name: "Susan Bones",
+    house: "RAVENCLAW",
+    pronouns: "she/her",
+  }
 ]
 
 
@@ -147,8 +175,32 @@ const renderToDom = (divId, htmlToRender) => {
   selectedDiv.innerHTML = htmlToRender;
 };
 
+// ************************************
+// RENDER GREETING AT START OF APPLICATION
+// ************************************
+let domString=""
+
+const startApp = () => {
+  // console.log("startApp working!")
+  domString = 
+  ` <div class="card mb-3" style="max-width: 18rem;">
+      <div class="card-header text-bg-primary">Welcome to Hogwarts!</div>
+      <div class="card-body">
+        <h5 class="card-title">Ready to be sorted into your house?</h5>
+        <button type="button" class="btn btn-info" id="startSorting">Start the Sorting!</button>
+      </div>
+    </div>`;
+
+  renderToDom('#greeting-container', domString);
+}
+
+startApp();
+
+
 const cardsOnDom = (array) => {
-  let domString = "";
+  domString = "";
+  headerOnDom();
+  domString += `<div id="student-container">`;
 
   for (const student of array) {
     domString += 
@@ -161,29 +213,53 @@ const cardsOnDom = (array) => {
         </div>
       `
   };
-  renderToDom('#students-container', domString);
+
+  domString += `</div>`;
+
+  renderToDom('#main-container', domString);
 }
 
 // cardsOnDom(students);
 
+const headerOnDom = () => {
+  //renders header with buttons to DOM
+ domString =
+  `<header id="header">
+    <h1>Welcome to Hogwarts, the safest (and most inclusive) place on earth! </h1>
+      <h2>Unlike the TERF original, everyone is welcome at this Hogwarts!</h2>
 
-// ************************************
-// RENDER CARDS ON START OF APPLICATION
-// ************************************
+      <div class="input-btn-container">
+        <div id="house-btn-container">
 
-const startApp = () => {
-  // console.log("startApp working!")
+          <button type="button" class="btn btn-secondary" id="all">All</button>
+          <button type="button" class="btn btn-danger" id="gryffindor">Gryffindor</button>
+          <button type="button" class="btn btn-warning" id="hufflepuff">Hufflepuff</button>
+          <button type="button" class="btn btn-primary" id="ravenclaw">Ravenclaw</button>
+          <button type="button" class="btn btn-success" id="slytherin">Slytherin</button>
+        </div>
+      </div>
+    </header>`;
+  //Remember to add Student Name input to input-btn-container above!
+};
+
+
+
+// **************************************
+// START SORTING BUTTON RENDERS MAIN PAGE
+// **************************************
+
+const startSorting = document.querySelector('#greeting-container');
+
+startSorting.addEventListener('click', (e) => {
   cardsOnDom(students);
-}
-
-startApp();
-
+  startSorting.remove();
+});
 
 // ************************
 // FILTER STUDENTS BY HOUSE
 // ************************
  
-const houseFilter = document.querySelector('.house-btn-container')
+const houseFilter = document.querySelector('body')
 
 houseFilter.addEventListener("click", (e) => {
 
@@ -203,3 +279,9 @@ houseFilter.addEventListener("click", (e) => {
     cardsOnDom(students);
   }
 });
+
+
+
+// ****************************
+// CREATE NEW STUDENTS IN ARRAY
+// ****************************

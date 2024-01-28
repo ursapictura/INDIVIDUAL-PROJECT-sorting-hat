@@ -1,26 +1,36 @@
-/* body {
-  background-image: url("night\ sky.jpeg");
-} */
+body {
+  /* background-image: url("night\ sky.jpeg"); */
+  margin: 0px;
+  padding: 0px;
+}
 
-header {
+#header {
   text-align: center;
   width: 100%;
-  margin-bottom: 50px;
-  padding: 50px 20px 0px;
+  margin: 0px 0px 50px 0px;
+  padding: 50px 0px 0px 0px;
   background-color: rgba(21, 25, 152, 0.533);
   color: whitesmoke;
 }
+#main-container {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
 
-#students-container {
+#student-container {
+  width: 80%;
+  padding: 0px;
+  margin: 0px auto;
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
-  margin: 20px auto;
+  justify-content: space-around;
 }
 
 .card {
   margin: 20px;
   width: 250px;
+  text-align: center;
 }
 
 /* .input-btn-container{
@@ -28,9 +38,11 @@ header {
   height: 200px;
 } */
 
-.house-btn-container {
+#house-btn-container {
   display: flex;
   flex-wrap: nowrap;
+  width: 100%;
+  margin-top: 50px;
 }
 
 .btn {
@@ -38,4 +50,15 @@ width: 20%;
 margin: 0px !important;
 flex: 1 1;
 border-radius: 0px;
+}
+
+#greeting-container {
+  width: 500px;
+  margin: 200px auto;
+  text-align: center;
+}
+
+
+#startSorting {
+  width: 100%;
 }
