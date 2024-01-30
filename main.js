@@ -209,7 +209,7 @@ const buttonsOnDom = () => {
 const cardsOnDom = (array) => {
   let domString = "";
 
-  for (const student of array) {
+  array.forEach((student) => {
     domString += 
       ` <div class="card mb-3" style="max-width: 18rem;">
           <div class="card-header text-bg-primary">${student.house}</div>
@@ -219,7 +219,7 @@ const cardsOnDom = (array) => {
           </div>
         </div>
       `
-  };
+  });
 
   renderToDom('#student-container', domString);
 }
