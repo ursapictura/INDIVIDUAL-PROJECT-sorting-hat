@@ -12,6 +12,7 @@ header {
   text-align: center;
   width: 100%;
   margin: 0px;
+  padding: 40px !important;
   background-color: rgb(185, 192, 209);
   color: rgb(18, 20, 21);
 }
@@ -59,7 +60,7 @@ border-radius: 0px;
   width: 30%;
   border-radius: 10px;
   padding: 10px;
-  margin: 25px auto;
+  margin: 15px auto;
 }
 
 form {
@@ -68,8 +69,3 @@ form {
   padding: 20px 40px;
   background-color: whitesmoke;
 }
-
-/* #sort-new {
-  border-radius: 10px;
-  margin-top: 30px !important;
-} */
