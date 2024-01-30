@@ -1,22 +1,22 @@
 body {
-  /* background-image: url("night\ sky.jpeg"); */
   margin: 0px;
   padding: 0px;
+  width: 100%;
 }
 
-#header {
-  text-align: center;
-  width: 100%;
-  margin: 0px 0px 50px 0px;
-  padding: 50px 0px 0px 0px;
-  background-color: rgba(21, 25, 152, 0.533);
-  color: whitesmoke;
-}
-#main-container {
-  width: 100%;
-  padding: 0px;
+header {
   margin: 0px;
 }
+
+#greeting-card {
+  text-align: center;
+  width: 100%;
+  margin: 0px;
+  background-color: rgb(185, 192, 209);
+  color: rgb(18, 20, 21);
+}
+
+
 
 #student-container {
   width: 80%;
@@ -33,32 +33,43 @@ body {
   text-align: center;
 }
 
-/* .input-btn-container{
-  background-color: whitesmoke;
-  height: 200px;
-} */
+#greeting-card {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
 
 #house-btn-container {
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 0px;
+
 }
 
 .btn {
 width: 20%;
-margin: 0px !important;
+margin: 0px ;
 flex: 1 1;
 border-radius: 0px;
 }
 
-#greeting-container {
-  width: 500px;
-  margin: 200px auto;
-  text-align: center;
-}
-
 
 #startSorting {
-  width: 100%;
+  width: 30%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 25px auto;
 }
+
+form {
+  width: 40%;
+  margin: 50px auto 20px auto;
+  padding: 20px 40px;
+  background-color: whitesmoke;
+}
+
+/* #sort-new {
+  border-radius: 10px;
+  margin-top: 30px !important;
+} */
