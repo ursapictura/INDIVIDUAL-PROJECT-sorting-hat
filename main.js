@@ -178,19 +178,20 @@ const renderToDom = (divId, htmlToRender) => {
 
 const formOnDom = () => {
   let formDomString = 
-    `<form>
-      <div class="mb-3">
-            <input type="text" class="form-control" id="student-name">
-            <label for="student-name" class="form-label">Student's Name</label>
+    `<div class="mb-3">
+        <h3>Enter First Year's Name </h3>
+        <input type="text" class="form-control" id="student-name">
+        <label for="student-name" class="form-label">Student's Name</label>
       </div>
 
       <div class="fmb-3">
         <input type="text" class="form-control" id="student-pronouns">
         <label for="student-pronouns">Preferred Pronouns</label>
       </div>
-    </form>`;
 
-  renderToDom('#new-student', formDomString);
+      <button type="submit" class="btn btn-info" id="submitStudent">Start the Sorting!</button>`;
+
+  renderToDom('#form-container', formDomString);
 }
 
 
@@ -233,8 +234,6 @@ const startSorting = document.querySelector('#startSorting');
 
 startSorting.addEventListener('click', (e) => {
   formOnDom();
-  buttonsOnDom();
-  cardsOnDom(students);
 });
 
 
@@ -269,7 +268,7 @@ houseFilter.addEventListener("click", (e) => {
 // CREATE NEW STUDENTS IN ARRAY
 // ****************************
 
-const submitForm = document.querySelector('#new-student');
+const submitForm = document.querySelector('#student-form');
 
 const addStudent = (e) => {
   e.preventDefault();
@@ -277,14 +276,15 @@ const addStudent = (e) => {
   const newStudentObj = {
     id: students.length + 1,
     name: document.querySelector('#student-name').value,
-    house: null,
+    house: "HUFFLEPUFF",
     pronouns:document.querySelector('#student-pronouns').value,
-  }
+  };
 
-  students.push(newStudentObj);
+  students.unshift(newStudentObj);
+  buttonsOnDom();
   cardsOnDom(students);
-  form.reset();
+  submitForm.reset();
 
 }
 
-submitForm.addEventListener("submit", addStudent());
+submitForm.addEventListener('submit', addStudent());
