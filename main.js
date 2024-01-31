@@ -287,4 +287,4 @@ const addStudent = (e) => {
 
 }
 
-submitForm.addEventListener('submit', addStudent());
+submitForm.addEventListener('submit', addStudent);
