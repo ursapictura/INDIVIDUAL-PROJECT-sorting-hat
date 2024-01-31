@@ -12,7 +12,7 @@ header {
   text-align: center;
   width: 100%;
   margin: 0px;
-  background-color: rgb(185, 192, 209);
+  background-color: whitesmoke;
   color: rgb(18, 20, 21);
 }
 
@@ -55,15 +55,15 @@ border-radius: 0px;
 }
 
 
-#startSorting {
-  width: 30%;
+#startSorting, #submitStudent {
+  width: 80%;
   border-radius: 10px;
   padding: 10px;
   margin: 25px auto;
 }
 
 form {
-  width: 40%;
+  width: 60%;
   margin: 50px auto 20px auto;
   padding: 20px 40px;
   background-color: whitesmoke;
