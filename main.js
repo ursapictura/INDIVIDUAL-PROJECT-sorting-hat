@@ -180,12 +180,12 @@ const formOnDom = () => {
   let formDomString = 
     `<div class="mb-3">
         <h3>Enter First Year's Name </h3>
-        <input type="text" class="form-control" id="student-name">
+        <input type="text" class="form-control" id="student-name" required>
         <label for="student-name" class="form-label">Student's Name</label>
       </div>
 
       <div class="fmb-3">
-        <input type="text" class="form-control" id="student-pronouns">
+        <input type="text" class="form-control" id="student-pronouns" required>
         <label for="student-pronouns">Preferred Pronouns</label>
       </div>
 
@@ -268,6 +268,25 @@ houseFilter.addEventListener("click", (e) => {
 // CREATE NEW STUDENTS IN ARRAY
 // ****************************
 
+const sortingHat = () => {
+  let house = "";
+  let num = Math.floor(Math.random() * 4);
+  console.log(num);
+  if (num === 0) {
+     house = "GRYFFINDOR";
+  } else if (num === 1) {
+     house = "RAVENCLAW";
+  } else if (num === 2) {
+     house = "HUFFLEPUFF";
+  } else if (num === 3) {
+     house = "SLYTHERIN";
+  } else {
+     house = "unknown";
+  }
+
+  return house;
+}
+
 const submitForm = document.querySelector('#student-form');
 
 const addStudent = (e) => {
@@ -276,7 +295,7 @@ const addStudent = (e) => {
   const newStudentObj = {
     id: students.length + 1,
     name: document.querySelector('#student-name').value,
-    house: "HUFFLEPUFF",
+    house: sortingHat(),
     pronouns:document.querySelector('#student-pronouns').value,
   };
 
