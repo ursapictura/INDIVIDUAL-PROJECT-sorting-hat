@@ -11,7 +11,7 @@ const students = [
   },
 
   {
-    Id: 2,
+    id: 2,
     name: "Luna Lovegood",
     house: "RAVENCLAW",
     pronouns: "she/her",
@@ -139,7 +139,7 @@ const students = [
   },
 
   {
-    id: 16, 
+    id: 17, 
     name: "Rose Noble",
     house: "GRYFFINDOR",
     pronouns: "she/her",
@@ -212,7 +212,7 @@ const formOnDom = () => {
         <label for="student-pronouns">Preferred Pronouns</label>
       </div>
 
-      <button type="submit" class="btn btn-info" id="submitStudent">Start the Sorting!</button>`;
+      <button type="submit" class="btn btn-light" id="submitStudent">Start the Sorting!</button>`;
 
   renderToDom('#form-container', formDomString);
 }
@@ -325,8 +325,8 @@ const addCrest = (house) => {
     studentCrest = "image/gryffindor-crest.jpg";
   } else if (house === "RAVENCLAW") {
     studentCrest = "image/ravenclaw-crest.jpg";
-  } else if (house === "RAVENCLAW") {
-    studentCrest = "image/ravenclaw-crest.jpg";
+  } else if (house === "HUFFLEPUFF") {
+    studentCrest = "image/hufflepuff-crest.jpg";
   } else if (house === "SLYTHERIN") {
     studentCrest = "image/slytherin-crest.jpg";
   }
@@ -366,6 +366,7 @@ submitForm.addEventListener('submit', addStudent);
 // EXPEL STUDENTS
 // **************
 
+const expelledStudents = [];
 
 const studentContainer = document.querySelector('#student-container');
 
@@ -373,10 +374,41 @@ studentContainer.addEventListener("click", (e) => {
   if (e.target.id.includes("expel")) {
     const [, id] = e.target.id.split('--');
 
-    const index = students.findIndex(e => e.id ===Number(id));
+    const index = students.findIndex(e => e.id === Number(id));
 
-    students.splice(index, 1);
-
-
+    let expelledStudent = students.splice(index, 1);
+    
+    console.log(expelledStudent);
+    expelledStudents.unshift(expelledStudent);
+    console.log(expelledStudents);
   }
+
+  cardsOnDom(students);
+  expelledOnDom(expelledStudents);
 })
+
+
+
+const expelledOnDom = (array) => {
+  let domString = `<h3 id="expelled">Expelled Students</h3>`;
+
+  array.forEach((deathEater) => {
+    domString += 
+      `<div class="card mb-3" style="max-width: 300px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="image/death-eater.jpg" class="img-fluid rounded-start" alt="the dark mark flashes across the sky in green">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${deathEater.name} has joined Voldemort's army.</h5>
+              <p class="card-text">${deathEater.pronouns}</p>
+          </div>
+          </div>
+        </div>
+      </div>
+      `
+  });
+
+  renderToDom('#expelled-container', domString);
+}
