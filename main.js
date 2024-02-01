@@ -6,14 +6,16 @@ const students = [
     name: "Harry Potter",
     house: "GRYFFINDOR",
     pronouns: "he/him",
+    crest: "image/gryffindor-crest.jpg",
 
   },
 
   {
-    Id: 2,
+    id: 2,
     name: "Luna Lovegood",
     house: "RAVENCLAW",
     pronouns: "she/her",
+    crest: "image/ravenclaw-crest.jpg",
   },
 
   {
@@ -21,6 +23,7 @@ const students = [
     name: "Hermione Granger",
     house: "GRYFFINDOR",
     pronouns: "she/her",
+    crest: "image/gryffindor-crest.jpg",
   },
 
   {
@@ -28,6 +31,7 @@ const students = [
     name: "Ron Weasley",
     house: "GRYFFINDOR",
     pronouns: "he/him",
+    crest: "image/gryffindor-crest.jpg",
   },
 
   {
@@ -35,13 +39,15 @@ const students = [
     name: "Rowena Ravenclaw",
     house: "RAVENCLAW",
     pronouns: "she/her",
+    crest: "image/ravenclaw-crest.jpg",
   },
 
   {
     id: 6, 
     name: "Draco Malfoy",
     house: "SLYTHERIN",
-    pronouns: "he/him"
+    pronouns: "he/him",
+    crest: "image/slytherin-crest.jpg",
   },
 
   {
@@ -49,6 +55,7 @@ const students = [
     name: "Hannah Abbot",
     house: "HUFFLEPUFF",
     pronouns: "she/they",
+    crest: "image/hufflepuff-crest.jpg",
   },
 
   {
@@ -56,6 +63,7 @@ const students = [
     name: "Haley Smith",
     house: "HUFFLEPUFF",
     pronouns: "she/they",
+    crest: "image/hufflepuff-crest.jpg",
   },
 
   {
@@ -63,20 +71,23 @@ const students = [
     name: "Rachel Spite",
     house: "RAVENCLAW",
     pronouns: "she/her",
+    crest: "image/ravenclaw-crest.jpg",
   },
 
   {
     id: 9,
     name: "Shane Smith",
     house: "SLYTHERIN",
-    pronouns: "he/him"
+    pronouns: "he/him",
+    crest: "image/slytherin-crest.jpg",
   },
 
   {
     id: 10,
     name: "Nik Stroupe",
     house: "HUFFLEPUFF",
-    pronouns: "he/him"
+    pronouns: "he/him",
+    crest: "image/hufflepuff-crest.jpg",
   },
 
   {
@@ -84,6 +95,7 @@ const students = [
     name: "Heathcliff",
     house: "GRYFFINDOR",
     pronouns: "he/him/good-boi",
+    crest: "image/gryffindor-crest.jpg",
   },
 
   {
@@ -91,6 +103,7 @@ const students = [
     name: "Kennedy",
     house: "SLYTHERIN",
     pronouns: "she/her/queen",
+    crest: "image/slytherin-crest.jpg",
   },
 
   {
@@ -98,6 +111,7 @@ const students = [
     name: "Amelia Pond",
     house: "GRYFFINDOR",
     pronouns: "she/her",
+    crest: "image/gryffindor-crest.jpg",
   },
 
   {
@@ -105,6 +119,7 @@ const students = [
     name: "Rory Williams",
     house: "HUFFLEPUFF",
     pronouns: "he/him",
+    crest: "image/hufflepuff-crest.jpg",
   },
 
   {
@@ -112,6 +127,7 @@ const students = [
     name: "River Song",
     house: "SLYTHERIN",
     pronouns: "she/her",
+    crest: "image/slytherin-crest.jpg",
   },
 
   {
@@ -119,13 +135,15 @@ const students = [
     name: "Donna Noble",
     house: "GRYFFINDOR",
     pronouns: "she/her",
+    crest: "image/gryffindor-crest.jpg",
   },
 
   {
-    id: 16, 
+    id: 17, 
     name: "Rose Noble",
     house: "GRYFFINDOR",
     pronouns: "she/her",
+    crest: "image/gryffindor-crest.jpg",
   },
 
   {
@@ -133,6 +151,7 @@ const students = [
     name: "Jack Harkness",
     house: "GRYFFINDOR",
     pronouns: "he/him",
+    crest: "image/gryffindor-crest.jpg",
   },
 
   {
@@ -140,6 +159,7 @@ const students = [
     name: "Cedric Diggory",
     house: "HUFFLEPUFF",
     pronouns: "he/him",
+    crest: "image/hufflepuff-crest.jpg",
   },
 
   {
@@ -147,6 +167,7 @@ const students = [
     name: "Nymphodora Tonks",
     house: "HUFFLEPUFF",
     pronouns: "they/them",
+    crest: "image/hufflepuff-crest.jpg",
   },
 
   {
@@ -154,6 +175,7 @@ const students = [
     name: "The Doctor",
     house: "HUFFLEPUFF",
     pronouns: "they/them",
+    crest: "image/hufflepuff-crest.jpg",
   },
 
   {
@@ -161,6 +183,7 @@ const students = [
     name: "Susan Bones",
     house: "RAVENCLAW",
     pronouns: "she/her",
+    crest: "image/ravenclaw-crest.jpg",
   }
 ]
 
@@ -189,7 +212,7 @@ const formOnDom = () => {
         <label for="student-pronouns">Preferred Pronouns</label>
       </div>
 
-      <button type="submit" class="btn btn-info" id="submitStudent">Start the Sorting!</button>`;
+      <button type="submit" class="btn btn-light" id="submitStudent">Start the Sorting!</button>`;
 
   renderToDom('#form-container', formDomString);
 }
@@ -208,17 +231,26 @@ const buttonsOnDom = () => {
 
 
 const cardsOnDom = (array) => {
-  let domString = "";
+  let domString = `<h3 id="first-years">First Years</h3>`;
 
   array.forEach((student) => {
     domString += 
-      ` <div class="card mb-3" style="max-width: 18rem;">
-          <div class="card-header text-bg-primary">${student.house}</div>
-          <div class="card-body">
-            <h5 class="card-title">${student.name}</h5>
-            <p class="card-text">${student.pronouns}</p>
+      `<div class="card mb-3" style="max-width: 300px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="${student.crest}" class="img-fluid rounded-start" alt="${student.house} crest">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${student.house}</h5>
+              <h5 class="card-title">${student.name}</h5>
+              <p class="card-text">${student.pronouns}</p>
+              <button type="button" class="btn btn-outline-danger expel" id="expel--${student.id}">Expel</button>
+          </div>
           </div>
         </div>
+      </div>
+      
       `
   });
 
@@ -264,12 +296,12 @@ houseFilter.addEventListener("click", (e) => {
 });
 
 
-// ****************************
-// CREATE NEW STUDENTS IN ARRAY
-// ****************************
+// ************************************
+// SORT NEW STUDENTS INTO RANDOM HOUSES
+// ************************************
+let house = "";
 
 const sortingHat = () => {
-  let house = "";
   let num = Math.floor(Math.random() * 4);
   console.log(num);
   if (num === 0) {
@@ -287,6 +319,25 @@ const sortingHat = () => {
   return house;
 }
 
+const addCrest = (house) => {
+  let studentCrest = "";
+  if (house === "GRYFFINDOR") {
+    studentCrest = "image/gryffindor-crest.jpg";
+  } else if (house === "RAVENCLAW") {
+    studentCrest = "image/ravenclaw-crest.jpg";
+  } else if (house === "HUFFLEPUFF") {
+    studentCrest = "image/hufflepuff-crest.jpg";
+  } else if (house === "SLYTHERIN") {
+    studentCrest = "image/slytherin-crest.jpg";
+  }
+  return studentCrest;
+}
+
+// ****************************
+// CREATE NEW STUDENTS IN ARRAY
+// ****************************
+
+
 const submitForm = document.querySelector('#student-form');
 
 const addStudent = (e) => {
@@ -297,6 +348,7 @@ const addStudent = (e) => {
     name: document.querySelector('#student-name').value,
     house: sortingHat(),
     pronouns:document.querySelector('#student-pronouns').value,
+    crest: addCrest(house),
   };
 
   students.unshift(newStudentObj);
@@ -307,3 +359,56 @@ const addStudent = (e) => {
 }
 
 submitForm.addEventListener('submit', addStudent);
+
+
+
+// **************
+// EXPEL STUDENTS
+// **************
+
+const expelledStudents = [];
+
+const studentContainer = document.querySelector('#student-container');
+
+studentContainer.addEventListener("click", (e) => {
+  if (e.target.id.includes("expel")) {
+    const [, id] = e.target.id.split('--');
+
+    const index = students.findIndex(e => e.id === Number(id));
+
+    let expelledStudent = students.splice(index, 1);
+    
+    console.log(expelledStudent);
+    expelledStudents.unshift(expelledStudent);
+    console.log(expelledStudents);
+  }
+
+  cardsOnDom(students);
+  expelledOnDom(expelledStudents);
+})
+
+
+
+const expelledOnDom = (array) => {
+  let domString = `<h3 id="expelled">Expelled Students</h3>`;
+
+  array.forEach((deathEater) => {
+    domString += 
+      `<div class="card mb-3" style="max-width: 300px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="image/death-eater.jpg" class="img-fluid rounded-start" alt="the dark mark flashes across the sky in green">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${deathEater.name} has joined Voldemort's army.</h5>
+              <p class="card-text">${deathEater.pronouns}</p>
+          </div>
+          </div>
+        </div>
+      </div>
+      `
+  });
+
+  renderToDom('#expelled-container', domString);
+}
