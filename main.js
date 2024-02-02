@@ -220,13 +220,13 @@ const formOnDom = () => {
 
 const buttonsOnDom = () => {
   let buttonDomString = 
-  `<button type="button" class="btn btn-secondary" id="all">All</button>
-     <button type="button" class="btn btn-danger" id="gryffindor">Gryffindor</button>
-     <button type="button" class="btn btn-warning" id="hufflepuff">Hufflepuff</button>
-     <button type="button" class="btn btn-primary" id="ravenclaw">Ravenclaw</button>
-    <button type="button" class="btn btn-success" id="slytherin">Slytherin</button>`;
+  `<button type="button" class="btn btn-danger"      id="gryffindor">Gryffindor</button>
+  <button type="button" class="btn btn-warning" id="hufflepuff">Hufflepuff</button>
+  <button type="button" class="btn btn-primary" id="ravenclaw">Ravenclaw</button>
+  <button type="button" class="btn btn-success" id="slytherin">Slytherin</button>
+  <button type="button" class="btn btn-secondary" id="all">All</button>`;
 
-    renderToDom('#house-btn-container', buttonDomString);
+  renderToDom('#house-btn-container', buttonDomString);
 }
 
 
@@ -376,7 +376,8 @@ studentContainer.addEventListener("click", (e) => {
 
     const index = students.findIndex(e => e.id === Number(id));
 
-    let expelledStudent = students.splice(index, 1);
+
+    let expelledStudent = students.splice(index, 1)[0];
     
     console.log(expelledStudent);
     expelledStudents.unshift(expelledStudent);
@@ -385,7 +386,7 @@ studentContainer.addEventListener("click", (e) => {
 
   cardsOnDom(students);
   expelledOnDom(expelledStudents);
-})
+});
 
 
 
