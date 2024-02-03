@@ -1,3 +1,8 @@
+<img alt="screneshot of welcome page" src="image/screenshot1-welcome.png"/>
+
+
+
+
 # Hogwarts Sorting Hat
 
 [Deployed App](https://my-sorting-hat.netlify.app)
@@ -25,8 +30,8 @@ My Sorting Hat is designed for everyone who wanted to go to Hogwarts but who no 
 
 ## Screenshots
 
-<img alt="scrennshot of wlecome page" src="image/screenshot2-form.png"/>
+<img alt="scrennshot of new student form" src="image/screenshot2-form.png"/>
 
-<img alt="scrennshot of wlecome page" src="image/screenshot3-students.png"/>
+<img alt="scrennshot of student cards" src="image/screenshot3-students.png"/>
 
-<img alt="scrennshot of wlecome page" src="image/screenshot4-expelled.png"/>
+<img alt="scrennshot of expelled student cards" src="image/screenshot4-expelled.png"/>
