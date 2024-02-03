@@ -3,11 +3,16 @@
 
 
 
+
 # Hogwarts Sorting Hat
 
 [Deployed App](https://my-sorting-hat.netlify.app)
 
 [Project Board](https://github.com/users/ursapictura/projects/1/views/1)
+
+[Video Demo](https://www.loom.com/share/b3340055233e4a508584789a3866691d?sid=f9b3bc79-3e69-4a3c-b6ca-4073477b3d2b)
+
+
 
 ## Project Overview
 In this project, I recreated the famous sorting hat experience from Harry Potter. Using a random number generator, every new student is sorted at random into one of the four Hogwarts Houses. Every new student is asked to provide their name and preferred pronouns. When a new student is sorted, their card will appear as the first card in the series. Each student's card shows their house crest, their name, and their preferred pronouns.
